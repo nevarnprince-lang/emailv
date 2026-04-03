@@ -1,25 +1,35 @@
 body {
- font-family: Arial, sans-serif;
- background-color: #f4f4f4;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background: rgba(255, 255, 255, 0.1);
  margin: 0;
  padding: 0;
  display: flex;
  justify-content: center;
  align-items: center;
  height: 100vh;
+ backdrop-filter: blur(10px);
 }
 
 .container {
- background: white;
+ background: rgba(255, 255, 255, 0.2);
  padding: 20px;
- border-radius: 8px;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ border-radius: 15px;
+ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ backdrop-filter: blur(10px);
+ border: 1px solid rgba(255, 255, 255, 0.3);
  width: 100%;
  max-width: 600px;
+ transition: transform 0.3s ease;
+}
+
+.container:hover {
+ transform: translateY(-10px);
 }
 
 h1 {
  text-align: center;
+ color: #fff;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 form {
@@ -29,6 +39,7 @@ form {
 label {
  display: block;
  margin-bottom: 5px;
+ color: #fff;
 }
 
 input {
@@ -36,7 +47,16 @@ input {
  padding: 10px;
  margin-bottom: 10px;
  border: 1px solid #ccc;
- border-radius: 4px;
+ border-radius: 8px;
+ background: rgba(255, 255, 255, 0.2);
+ backdrop-filter: blur(10px);
+ color: #fff;
+ transition: border-color 0.3s ease;
+}
+
+input:focus {
+ border-color: #007BFF;
+ outline: none;
 }
 
 button {
@@ -44,8 +64,9 @@ button {
  background-color: #007BFF;
  color: white;
  border: none;
- border-radius: 4px;
+ border-radius: 8px;
  cursor: pointer;
+ transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -57,9 +78,33 @@ button:hover {
 }
 
 pre {
- background: #f9f9f9;
- border: 1px solid #ddd;
+ background: rgba(255, 255, 255, 0.2);
+ border: 1px solid rgba(255, 255, 255, 0.3);
  padding: 10px;
- border-radius: 4px;
+ border-radius: 8px;
  white-space: pre-wrap;
+ color: #fff;
+ backdrop-filter: blur(10px);
+}
+
+#loader {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ z-index: 1000;
+}
+
+.spinner {
+ border: 4px solid rgba(255, 255, 255, 0.3);
+ border-top: 4px solid #007BFF;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+ 0% { transform: rotate(0deg); }
+ 100% { transform: rotate(360deg); }
 }

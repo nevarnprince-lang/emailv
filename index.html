@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>SendGrid Link Decoder</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <div class="container">
+ <h1>SendGrid Link Decoder</h1>
+ <form id="decodeForm">
+ <label for="link">SendGrid Link:</label>
+ <input type="text" id="link" name="link" required>
+ <button type="submit">Decode</button>
+ </form>
+ <div id="result" class="hidden">
+ <h2>Decoded Data:</h2>
+ <pre id="decodedData"></pre>
+ <form id="emailForm">
+ <label for="newEmail">New Email Address:</label>
+ <input type="email" id="newEmail" name="newEmail" required>
+ <button type="submit">Change Email</button>
+ </form>
+ <pre id="modifiedData" class="hidden"></pre>
+ </div>
+ </div>
+ <script src="script.js"></script>
+</body>
+</html>
